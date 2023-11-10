@@ -18,7 +18,7 @@
 <section id="buttons">
 <button id="switch">连续: 开</button>
 <button id="next1">换一个</button>
-</section>
+<a class="home" href="./index.html">返回主页</a> 
 </div>
 <script>
 (function (window, document) {
@@ -48,7 +48,8 @@ this.innerText = '连续: ' + (auto ? '开' : '关');
 bind(player, 'ended', function () {
 if (auto) randomm();
 });
-})(window, document);</script>
+})(window, document);
+</script>
 <style>
 #switch,#next1{
 background: #7F9CCC;
@@ -60,6 +61,17 @@ border:none;
 margin:0 6px;
 border-radius:6px;
 font-weight:bold;
+}
+.home{
+background: #7F9CCC;
+color: #141414;
+text-align:center;
+padding: 19px 17px;
+border:none;
+margin:0 7px;
+border-radius:6px;
+font-weight:550; 
+text-decoration:none
 }
 body {
   background: #000000;
