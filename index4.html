@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<title>随机图片小姐姐</title>
+<style>
+  body {
+    text-align: center;
+    margin-top: 100px;
+  }
+  .button {
+    margin: 10px;
+    padding: 10px 20px;
+    border: none;
+    background-color: #333;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+  }
+  #button-container {
+    margin-top: 20px;
+  }
+</style>
+</head>
+<body>
+
+<!-- 图片 -->
+<div style="margin: auto;">
+  <img id="image" alt="图片" style="display: block;">
+</div>
+
+<!-- 按钮 -->
+<div id="button-container">
+  <button class="button" onclick="http://av.host.gay/tp/sjmt.php">刷新</button>
+  <button class="button" onclick="location.href='index.html'">返回主页</button>
+</div>
+
+<script>
+  // 调用API接口获取图片URL
+  function getImageUrl() {
+    var xhr = new XMLHttpRequest();
+    xhr.open('GET', 'av.host.gay/tp/sjmt.php', true);
+    xhr.onreadystatechange = function() {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var data = JSON.parse(xhr.responseText);
+        document.getElementById("image").src = data.url;
+      }
+    };
+    xhr.send();
+  }
+
+  // 刷新API
+  function 刷新API() {
+    getImageUrl();
+  }
+
+  // 在页面加载时调用getImageUrl函数
+  window.onload = function() {
+    getImageUrl();
+  };
+</script>
+
+</body>
+</html>
