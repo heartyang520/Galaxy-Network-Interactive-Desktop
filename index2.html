@@ -1,14 +1,13 @@
 ##<!doctype html>
-#取消后会开启浏览器自适应
+<!--#取消后会开启浏览器自适应
+-->
 <html>
 <head>
 <meta charset="UTF-8">
 <title>随机小姐姐</title>
 </head>
 <body>
-
 </body>
-
 <div>
 <section id="main">
 <video id="player" src="http://api.yujn.cn/api/zzxjj.php?type=video" controls="controls" preload="auto" width="100%" height="85%"></video>
@@ -18,7 +17,9 @@
 <section id="buttons">
 <button id="switch">连续: 开</button>
 <button id="next1">换一个</button>
-<a class="home" href="./index.html">返回主页</a> 
+<button id="goHome">切换到主页</button>
+<!--另外的方式<a class="page1" href="./index.html">下一页</a>
+-->
 </div>
 <script>
 (function (window, document) {
@@ -48,10 +49,15 @@ this.innerText = '连续: ' + (auto ? '开' : '关');
 bind(player, 'ended', function () {
 if (auto) randomm();
 });
-})(window, document);
+// 绑定切换到主页的按钮
+      bind(get('goHome'), 'click', function () {
+        window.location.href = './index.html';
+      });
+    })(window, document);
+<!--})(window, document);作结尾-->
 </script>
 <style>
-#switch,#next1{
+#switch,#next1,#goHome{
 background: #7F9CCC;
 color: #141414;
 line-height:60px;
@@ -62,6 +68,7 @@ margin:0 6px;
 border-radius:6px;
 font-weight:bold;
 }
+<!--home对应的样式
 .home{
 background: #7F9CCC;
 color: #141414;
@@ -73,6 +80,7 @@ border-radius:6px;
 font-weight:550; 
 text-decoration:none
 }
+-->
 body {
   background: #000000;
 }
