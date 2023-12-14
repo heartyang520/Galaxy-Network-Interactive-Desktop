@@ -18,7 +18,8 @@
 <button id="switch">连续: 开</button>
 <button id="next1">换一个</button>
 <button id="goHome">切换到主页</button>
-<!--另外的方式<a class="page1" href="./index.html">下一页</a>
+<button id="gopageone">下一个接口</button>
+<!--另外的方式<a class="gopageone" href="./index.html">下一页</a>
 -->
 </div>
 <script>
@@ -53,11 +54,16 @@ if (auto) randomm();
       bind(get('goHome'), 'click', function () {
         window.location.href = './index.html';
       });
+// 绑定切换到下一接口的按钮
+      bind(get('gopageone'), 'click', function () {
+        window.location.href = './index3.html';
+      });
     })(window, document);
-<!--})(window, document);作结尾-->
+<!--})(window, document);作结尾
+-->
 </script>
 <style>
-#switch,#next1,#goHome{
+#switch,#next1,#goHome,#gopageone{
 background: #7F9CCC;
 color: #141414;
 line-height:60px;
@@ -68,7 +74,7 @@ margin:0 6px;
 border-radius:6px;
 font-weight:bold;
 }
-<!--home对应的样式
+<!--gopageone对应的样式
 .home{
 background: #7F9CCC;
 color: #141414;
