@@ -2,62 +2,45 @@
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
-<title>随机图片小姐姐</title>
+<title>图片</title>
 <style>
-  body {
-    text-align: center;
-    margin-top: 100px;
+  .center-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
   }
-  .button {
-    margin: 10px;
+
+  img {
+    max-width: 80%;
+    max-height: 80%;
+  }
+
+  button {
     padding: 10px 20px;
-    border: none;
-    background-color: #333;
-    color: white;
+    margin: 10px;
     cursor: pointer;
-    border-radius: 5px;
-  }
-  #button-container {
-    margin-top: 20px;
   }
 </style>
 </head>
 <body>
 
-<!-- 图片 -->
-<div style="margin: auto;">
-  <img id="image" alt="图片" style="display: block;">
-</div>
-
-<!-- 按钮 -->
-<div id="button-container">
-  <button class="button" onclick="http://av.host.gay/tp/sjmt.php">刷新</button>
-  <button class="button" onclick="location.href='index.html'">返回主页</button>
+<div class="center-div">
+  <img id="image-container" src="http://av.host.gay/tp/sjmt.php" alt="加载中的图片">
+  <button id="refresh-button" onclick="refreshImage()">刷新图片</button>
+  <button id="back-button" onclick="backToTestPage()">返回测试页面</button>
 </div>
 
 <script>
-  // 调用API接口获取图片URL
-  function getImageUrl() {
-    var xhr = new XMLHttpRequest();
-    xhr.open('GET', 'av.host.gay/tp/sjmt.php', true);
-    xhr.onreadystatechange = function() {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        var data = JSON.parse(xhr.responseText);
-        document.getElementById("image").src = data.url;
-      }
-    };
-    xhr.send();
-  }
+// 刷新图片的函数
+function refreshImage() {
+  document.getElementById('image-container').src = "your_image_url?" + new Date().getTime();
+}
 
-  // 刷新API
-  function 刷新API() {
-    getImageUrl();
-  }
-
-  // 在页面加载时调用getImageUrl函数
-  window.onload = function() {
-    getImageUrl();
-  };
+// 返回测试HTML页面的函数
+function backToTestPage() {
+  window.location.href = "test.html";
+}
 </script>
 
 </body>
