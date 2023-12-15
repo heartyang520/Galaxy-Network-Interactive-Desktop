@@ -4,13 +4,13 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>随机小姐姐6</title>
+<title>随机小姐姐6-漫展</title>
 </head>
 <body>
 </body>
 <div>
 <section id="main">
-<video id="player" src="https://tucdn.wpon.cn/api-girl/index.php" controls="controls" preload="auto" width="100%" height="85%"></video>
+<video id="player" src="https://api.yujn.cn/api/manzhan.php" controls="controls" preload="auto" width="100%" height="85%"></video>
 </section>
 </div>
 <div style="text-align: center;">
@@ -36,7 +36,7 @@ return element.addEventListener(event, callback);
 var auto = true;
 var player = get('player');
 var randomm = function () {
-player.src = 'https://tucdn.wpon.cn/api-girl/index.php?_t=' + Math.random();
+player.src = 'https://api.yujn.cn/api/manzhan.php?_t=' + Math.random();
 player.play();
 }
 bind(get('next1'), 'click', randomm);
